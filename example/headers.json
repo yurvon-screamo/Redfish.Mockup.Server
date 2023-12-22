@@ -1,0 +1,13 @@
+{
+  "GET": {
+    "Content-Type": "application/json",
+    "Content-Length": "22",
+    "Connection": "keep-alive",
+    "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval';",
+    "Date": "Fri, 01 Sep 2023 18:59:14 GMT",
+    "OData-Version": "4.0",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "sameorigin",
+    "X-XSS-Protection": "1; mode=block"
+  }
+}

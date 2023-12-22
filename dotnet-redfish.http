@@ -1,0 +1,11 @@
+@dotnet_redfish_HostAddress = http://localhost:5249
+
+GET {{dotnet_redfish_HostAddress}}/redfish/v1/
+Accept: application/json
+
+###
+
+GET {{dotnet_redfish_HostAddress}}/redfish/v1/Chassis/
+Accept: application/json
+
+###
