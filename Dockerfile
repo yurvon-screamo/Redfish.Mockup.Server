@@ -1,7 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine3.18-amd64 AS build
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    clang zlib1g-dev
+RUN apk update && \
+    apk add clang build-base zlib-dev
 
 WORKDIR /src
 COPY ["dotnet-redfish.csproj", "."]
