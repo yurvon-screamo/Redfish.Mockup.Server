@@ -42,7 +42,8 @@ public class EndpointHandler
         {
             foreach (KeyValuePair<string, string> item in headers)
             {
-                if (!item.Key.Equals("content-length", StringComparison.CurrentCultureIgnoreCase))
+                if (!item.Key.Equals("content-length", StringComparison.CurrentCultureIgnoreCase) ||
+                    !item.Key.Equals("transfer-encoding", StringComparison.CurrentCultureIgnoreCase))
                 {
                     context.Response.Headers.TryAdd(item.Key, item.Value);
                 }

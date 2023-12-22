@@ -1,13 +1,20 @@
 {
   "GET": {
+    "Date": "Fri, 01 Sep 2023 19:11:49 GMT",
     "Content-Type": "application/json",
-    "Content-Length": "22",
+    "Transfer-Encoding": "chunked",
     "Connection": "keep-alive",
-    "Content-Security-Policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval';",
-    "Date": "Fri, 01 Sep 2023 18:59:14 GMT",
+    "Link": "</redfish/v1/schemas/ServiceRoot.v1_4_0.json>; rel=\"describedby\"; type=\"application/json\"",
+    "ETag": "\"9432f54ca3c3909f4b7989960f3f782e\"",
+    "Allow": "HEAD, GET",
     "OData-Version": "4.0",
+    "Content-Language": "en",
+    "Cache-Control": "no-store, no-cache, no-store, must-revalidate, private",
+    "Server": "XCC Web Server",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Content-Security-Policy": "default-src 'self'; connect-src *; script-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; child-src 'self'; object-src 'none' ",
+    "X-XSS-Protection": "1; mode=block",
     "X-Content-Type-Options": "nosniff",
-    "X-Frame-Options": "sameorigin",
-    "X-XSS-Protection": "1; mode=block"
+    "X-Frame-Options": "DENY"
   }
 }
