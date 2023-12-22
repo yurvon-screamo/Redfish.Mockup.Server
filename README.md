@@ -2,7 +2,7 @@
 
 A simple dotnet aot 8.0 program that can be copied into a folder at the top of any Redfish mockup and can serve Redfish requests on the specified IP/port.
 
-Idea from - [DMTF](https://github.com/DMTF/Redfish-Mockup-Server)
+Idea from - [DMTF](https://github.com/DMTF/Redfish-Mockup-Server) (with more performance, but with less functionality).
 
 ## About
 
