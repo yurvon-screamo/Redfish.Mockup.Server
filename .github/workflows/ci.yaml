@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup dotnet
+        uses: ./.github/dotnet
+      - uses: actions/checkout@v2
+      - name: Run dotnet build
+        run: dotnet build --configuration Debug
+
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup dotnet
+        uses: ./.github/dotnet
+      - uses: actions/checkout@v2
+      - name: dotnet format check
+        run: dotnet format --verify-no-changes *.sln
+        env:
+          PATH: ${{ github.env.PATH }}:/home/runner/.dotnet/tools
+
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup dotnet
+        uses: ./.github/dotnet
+      - uses: actions/checkout@v2
+      - name: unit test
+        run: dotnet test *sln
+
+  image-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag yurvon-screamo/redfish.mockup.server:$(date +%s)
