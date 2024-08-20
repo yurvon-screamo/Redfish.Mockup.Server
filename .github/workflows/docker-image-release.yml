@@ -24,4 +24,4 @@ jobs:
         run: docker build . -t ghcr.io/yurvon-screamo/redfish-mockup-server:latest
 
       - name: Push Docker image
-        run: docker push ghcr.io/yurvon-screamo/redfish-mockup-server:latest
+        run: env
