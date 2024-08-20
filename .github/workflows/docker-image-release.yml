@@ -1,11 +1,11 @@
-name: Publish release
+name: publish-release
 
 on:
   release:
     types: [published]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
 
@@ -19,8 +19,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: docker build . -t ghcr.io/yurvon-screamo/redfish-mockup-server:${{ github.event.release.tag_name }} -t ghcr.io/yurvon-screamo/redfish-mockup-server:latest
-
-      - name: Push Docker image
-        run: docker push ghcr.io/yurvon-screamo/redfish-mockup-server:${{ github.event.release.tag_name }} ghcr.io/yurvon-screamo/redfish-mockup-server:latest
+      - name: Build And Push Docker image
+        run: docker build . -t ghcr.io/yurvon-screamo/redfish-mockup-server:${{ github.event.release.tag_name }} -t ghcr.io/yurvon-screamo/redfish-mockup-server:latest --push
