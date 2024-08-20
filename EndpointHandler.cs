@@ -60,7 +60,7 @@ public class EndpointHandler
     private Task<string?> GetContentByPath(string fullPath)
     {
         string contentPath = fullPath + "index.json";
-        
+
         if (!File.Exists(contentPath))
         {
             _logger.LogError("Not found content on {Path}", contentPath);

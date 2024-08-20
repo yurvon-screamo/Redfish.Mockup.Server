@@ -6,11 +6,11 @@ IConfigurationSection section = builder.Configuration.GetSection("ContentRelativ
 builder.Services.Configure<string>(section);
 string? contentRelativePath = section.Get<string>();
 
-builder.Services.ConfigureHttpJsonOptions(options => 
+builder.Services.ConfigureHttpJsonOptions(options =>
     options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppSerializerContext.Default));
 
 builder.Services.AddSingleton<EndpointHandler>(s => new(
-    contentRelativePath, 
+    contentRelativePath,
     s.GetRequiredService<ILogger<EndpointHandler>>()));
 
 WebApplication app = builder.Build();
