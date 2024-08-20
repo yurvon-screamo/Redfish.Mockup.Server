@@ -11,18 +11,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: setup dotnet
         uses: ./.github/dotnet
-      - uses: actions/checkout@v2
       - name: Run dotnet build
         run: dotnet build --configuration Debug
 
   fmt:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: setup dotnet
         uses: ./.github/dotnet
-      - uses: actions/checkout@v2
       - name: dotnet format check
         run: dotnet format --verify-no-changes *.sln
         env:
@@ -31,9 +31,9 @@ jobs:
   unit-test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: setup dotnet
         uses: ./.github/dotnet
-      - uses: actions/checkout@v2
       - name: unit test
         run: dotnet test *sln
 
