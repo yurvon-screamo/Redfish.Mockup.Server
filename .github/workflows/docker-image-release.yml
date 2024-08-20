@@ -1,10 +1,9 @@
 name: Build and Push Docker Image
 
 on:
+  release:
   push:
-    branches:
-      - main  # Измените на вашу основную ветку, если она называется иначе
-  # Вы также можете использовать pull_request или другие события, если хотите
+    branches: [ "main" ]
 
 jobs:
   build:
