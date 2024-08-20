@@ -27,7 +27,7 @@ To run the mockup server as a Docker container:
 ## Configure
 
 * Edit [appsettings.json](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel/endpoints?view=aspnetcore-8.0#configure-endpoints-in-appsettingsjson) and set target listen address:port (default `0.0.0.0:8080`).
-* Set "ContentRelativePath" variable to set redfish-mockup data directory (default - `content`).
+* Set "ContentRelativePath" variable to set redfish-mockup data directory (default directory - `content`).
 
 Or set in env appsettings values.
 
