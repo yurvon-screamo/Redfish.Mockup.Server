@@ -3,7 +3,8 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - main  # Измените на вашу основную ветку, если она называется иначе
+  # Вы также можете использовать pull_request или другие события, если хотите
 
 jobs:
   build:
@@ -21,7 +22,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build . -t ghcr.io/${{ github.repository }}/redfish-mockup-server:latest
+        run: docker build . -t ghcr.io/yurvon-screamo/redfish-mockup-server:latest
 
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.repository }}/redfish-mockup-server:latest
+        run: docker push ghcr.io/yurvon-screamo/redfish-mockup-server:latest
