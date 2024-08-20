@@ -2,9 +2,7 @@ using DotnetRedfish;
 
 WebApplicationBuilder builder = WebApplication.CreateSlimBuilder(args);
 
-IConfigurationSection section = builder.Configuration.GetSection("ContentRelativePath");
-builder.Services.Configure<string>(section);
-string? contentRelativePath = section.Get<string>();
+string? contentRelativePath = builder.Configuration["ContentRelativePath"];
 
 builder.Services.ConfigureHttpJsonOptions(options =>
     options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppSerializerContext.Default));
